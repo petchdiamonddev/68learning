@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #819A91;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: #EEEFE0;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 20%;
+  height: 300px;
+  /* only for demonstration, should be removed */
+  background: #A7C1A8;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: aqua;
+}
+
+
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: #f1f1f1;
+  height: 100%;
+  /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #0ABAB5;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  bottom: 0;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+
+  nav,
+  article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* ทำเอง */
+
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ffff;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: aqua;
+  color: #ffff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.conntainer {
+  border-radius: 5px;
+  background-color: antiquewhite;
+  padding: 12px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-50 {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+button a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+.btn {
+  background-color: #0ABAB5;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin: 4px 4px;
+}
+
+.btn:hover {
+  background-color: rgb(255, 153, 0);
+}
+
+.btn1 {
+  background-color: #00ff2f;
+}
+
+.btn1:hover {
+  background-color: rgb(70, 147, 60);
+}
+
+.btn2 {
+  background-color: red;
+}
+
+.btn2:hover {
+  background-color: #0ABAB5;
+}
+
+
+.btn3 {
+  background-color: red;
+}
+
+.btn3:hover {
+  background-color: #ba0a7f;
+}
+
+
+input[type=submit]:hover {
+  background-color: blue;
+}
+
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ffff;
+  resize: vertical;
+}
+
+@media screen and(max-width:600px) {
+  input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
