@@ -5,20 +5,23 @@ $db = new Database();
 $conn=$db->getConnetction();
 
 
-    if(isset($_POST['MM_id'])){
+    if(isset($_POST['m_id'])){
 
-        $preid = $_POST['MM_id'];
-        $pretxt = $_POST['pretxt'];
+        $id = $_POST['m_id'];
+        $preid = $_POST['preid'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
 
+        $stmt = $conn->prepare("UPDATE users SET pre_id  =:preid, fname = :fname, lname = :lname WHERE id =:id");
 
-        $stmt = $conn->prepare("UPDATE prefix SET pretxt  =:pretxt WHERE preid =:id");
-
-        $stmt->bindParam(':pretxt', $pretxt);
-        $stmt->bindParam(':id', $preid);
+        $stmt->bindParam(':preid', $preid);
+        $stmt->bindParam(':fname', $fname);
+        $stmt->bindParam(':lname', $lname);
+        $stmt->bindParam(':id', $id);
         $result = $stmt->execute();
 ?>
 <script>
-    window.open('../profix.php', '_self');
+    window.open('../person.php', '_self');
 </script>
 <?php        
     }
