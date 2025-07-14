@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `prefix` (
   `preid` int NOT NULL,
   `pretxt` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `prefix`
@@ -51,7 +51,7 @@ CREATE TABLE `users` (
   `pre_id` int NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`

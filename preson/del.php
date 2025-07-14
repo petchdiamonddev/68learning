@@ -9,7 +9,7 @@ if(isset($_POST['MM_id'])){
     $id = $_POST['MM_id']; 
 
     $stmt = $conn->prepare("DELETE FROM users WHERE id=:id"); 
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT); 
+    $stmt->bindParam(':id', $id); 
     $result = $stmt->execute();
 ?>
 <script>

@@ -32,7 +32,7 @@ if(isset($_GET['id']) != ""){
         <article>
                 <h1 class="text-center">ลบคำนำหน้า</h1>
                 <div>
-                    <form action="./del.php" method="post">
+                    <form action="..profix/del.php" method="post">
                         <div class="row">
                             <div class="col-25">
                                 <label for="pretxt">คำนำหน้า</label>
