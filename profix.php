@@ -27,7 +27,8 @@ $result = $query->fetchAll();
     <section>
  <?php  require_once('./theme/nav.php'); ?>
         <article>
-           <h1>ข้อมูลลำดับชื่อ</h1> </a> <button class="btn"><a href="./profix/frm_insert.php">เพิ่ม</a></button>
+           <h1>ข้อมูลนำหน้า</h1> </a> 
+           <button class="btn"><a href="./profix/frm_insert.php">เพิ่มคำนำหน้า</a></button>
 
             <table>
                 <thead>

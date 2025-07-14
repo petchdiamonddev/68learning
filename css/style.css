@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+
 }
 
 body {
@@ -110,12 +111,13 @@ label {
 }
 
 input[type=submit] {
-  background-color: aqua;
+  background-color: red;
   color: #ffff;
   padding: 12px 20px;
   border-radius: 5px;
   cursor: pointer;
   float: right;
+    transition-duration: 0.4s;
 }
 
 .conntainer {
@@ -152,6 +154,12 @@ input[type=submit] {
   margin-top: 6px;
 }
 
+.col-70 {
+  float: left;
+  width: 70%;
+  margin-top: 6px;
+}
+
 button a {
   text-decoration: none;
   color: #ffff;
@@ -172,7 +180,7 @@ button a {
 }
 
 .btn:hover {
-  background-color: rgb(255, 153, 0);
+  background-color: #20817e;
 }
 
 .btn1 {
@@ -202,7 +210,7 @@ button a {
 
 
 input[type=submit]:hover {
-  background-color: blue;
+  background-color: rgb(176, 17, 17);
 }
 
 

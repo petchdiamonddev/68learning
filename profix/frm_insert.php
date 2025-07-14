@@ -20,17 +20,19 @@
                 <h1 class="text-center">เพิ่มคำนำหน้า</h1>
                 <div>
                     <form action="./insert.php" method="post">
+                        <div class="col-25">
+                            <label for="pretxt">คำนำหน้า</label>
+                        </div>
                         <div class="row">
-                            <div class="col-25">
-                                <label for="pretxt">คำนำหน้า</label>
-                            </div>
-                            <div class="col-75">
+                        
+                            <div class="col-50">
                                 <input type="text" id="pretxt" name="pretxt" placeholder="กรอกคำนำหน้าชื่อ">
                             </div>
-                        </div>
-
+                        </div>  
                         <div class="row">
-                            <input type="submit" value="บันทึก">
+                            <div class="col-75">
+                            <input type="submit" value="เพิ่มข้อมูล">
+                        </div>
                         </div>
                     </form>
                 </div>

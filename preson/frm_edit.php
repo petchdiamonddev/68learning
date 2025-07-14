@@ -31,6 +31,7 @@ if(isset($_GET['id']) != ""){
     <section>
         <?php require_once('./navcopy.php'); ?>
         <article>
+            <h1 class="text-center">แก้ไขชื่อ-สกุล</h1>
             <div>
                 <form action="./edit.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
@@ -84,6 +85,7 @@ if(isset($_GET['id']) != ""){
             </div>
         </article>
     </section>
+    <?php require_once('../theme/footer.php');?>
 </body>
 
 </html>

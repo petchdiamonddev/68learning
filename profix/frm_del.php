@@ -30,22 +30,23 @@ if(isset($_GET['id']) != ""){
     <section>
     <?php require_once('./navcopy.php'); ?>
         <article>
-                <h1 class="text-center">แก้ไขคำนำหน้า</h1>
+                <h1 class="text-center">ลบคำนำหน้า</h1>
                 <div>
                     <form action="./del.php" method="post">
                         <div class="row">
                             <div class="col-25">
                                 <label for="pretxt">คำนำหน้า</label>
                             </div>
-                        </div>
-                        <div class="col-50">
-                            <input type="text" name="pretxt" value="<?php echo $result['pretxt']; ?>" readonly>
-                        </div>
+                        
+                            <div class="col-50">
+                                <input type="text" name="pretxt" value="<?php echo $result['pretxt']; ?>" readonly>
+                            </div>
+                        </div>    
                         <div class="row">
-                        <div class="col-75">
-                            <input type="hidden" name="MM_id" value="<?php echo $result['preid']; ?>">
-                            <input type="submit" value="บันทึก">
-                        </div>
+                            <div class="col-75">
+                                <input type="hidden" name="MM_id" value="<?php echo $result['preid']; ?>">
+                                <input type="submit" value="ลบ">
+                            </div>
                         </div>
                     </form>
                 </div>

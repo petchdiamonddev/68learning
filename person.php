@@ -29,7 +29,7 @@ $result = $stmt->fetchAll();
         <?php require_once('./theme/nav.php'); ?>
         <article>
             <h1>ข้อมูลบุคลากร</h1>
-            <a href="./preson/frm_insert.php"><button class="btn">เพิ่ม</button></a>
+            <button class="btn"><a href="./preson/frm_insert.php">เพิ่มบุคลากร</a></button>
             <table>
                 <thead>
                     <th>ลำดับ</th>

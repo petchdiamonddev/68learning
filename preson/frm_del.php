@@ -29,31 +29,32 @@ if(isset($_GET['id']) != ""){
     </header>
 
     <section>
-    <?php require_once('./navcopy.php'); ?>
+        <?php require_once('./navcopy.php'); ?>
         <article>
-                <h1 class="text-center">ลบข้อมูลบุคลากร</h1>
-                <div>
-                    <form action="./del.php" method="post">
-                        <div class="row">
-                            <div class="col-25">
-                                <label>ชื่อ-สกุล</label>
-                            </div>
+            <h1 class="text-center">ลบข้อมูลบุคลากร</h1>
+            <div>
+                <form action="./del.php" method="post">
+                    <div class="row">
+                        <div class="col-25">
+                            <label>ชื่อ-สกุล:</label>
                         </div>
                         <div class="col-50">
-                            <input type="text" name="pretxt" value="<?php echo $result['pretxt']." ".$result['fname']." ".$result['lname']; ?>" readonly>
+                            <input type="text" name="fullNameDisplay" value="<?php echo $result['pretxt']." ".$result['fname']." ".$result['lname']; ?>" readonly>
                         </div>
-                        <div class="row">
+                    </div>
+
+                    <div class="row">
                         <div class="col-75">
-                            <input type="hidden" name="MM_id" value="<?php echo $result['id']; ?>">
-                            <input type="submit" value="บันทึก">
+                            <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
+                            <input type="submit" name="submit" value="ยืนยันการลบ">
                         </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
+            </div>
         </article>
     </section>
 
-<?php require_once('../theme/footer.php');?>
+    <?php require_once('../theme/footer.php'); ?>
 
 </body>
 

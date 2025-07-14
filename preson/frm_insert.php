@@ -28,10 +28,10 @@ $conn = $db->getConnetction();
                 <form action="./insert.php" method="post">
                     <div class="row">
                         <div class="col-25">
-                            <label for="pretxt">คำนำหน้า</label>
+                            <label>คำนำหน้าชื่อ:</label>
                         </div>
-                        <div class="col-75">
-                            <select name="pre_id">
+                        <div class="col-50">
+                           <select name="pre_id">
                                 <?php
                                 $stmt = $conn->prepare("SELECT * FROM prefix");
                                 $stmt->execute();
@@ -44,24 +44,29 @@ $conn = $db->getConnetction();
                             </select>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-25">
-                            <label for="fname">ชื่อ</label>
+                            <label>ชื่อ:</label>
                         </div>
-                        <div class="col-75">
-                            <input type="text" id="fname" name="fname" placeholder="กรอกชื่อ">
+                        <div class="col-50">
+                            <input type="text" name="fname" placeholder="กรอกชื่อ">
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-25">
-                            <label for="lname">นามสกุล</label>
+                            <label>นามสกุล:</label>
                         </div>
-                        <div class="col-75">
-                            <input type="text" id="lname" name="lname" placeholder="กรอกนามสกุล">
+                        <div class="col-50">
+                            <input type="text" name="lname" placeholder="กรอกนามสกุล">
                         </div>
                     </div>
+
                     <div class="row">
-                        <input type="submit" name="submit" value="บันทึก">
+                        <div class="col-75">
+                            <input type="submit" name="submit" value="บันทึก">
+                        </div>
                     </div>
                 </form>
             </div>

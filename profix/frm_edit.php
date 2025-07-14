@@ -37,14 +37,15 @@ if(isset($_GET['id']) != ""){
                             <div class="col-25">
                                 <label for="pretxt">คำนำหน้า</label>
                             </div>
-                        </div>
+                        
                         <div class="col-50">
                             <input type="text" name="pretxt" value="<?php echo $result['pretxt']; ?>">
+                        </div>
                         </div>
                         <div class="row">
                         <div class="col-75">
                             <input type="hidden" name="MM_id" value="<?php echo $result['preid']; ?>">
-                            <input type="submit" value="บันทึก">
+                            <input type="submit" value="แก้ไข">
                         </div>
                         </div>
                     </form>
