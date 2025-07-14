@@ -17,7 +17,7 @@ $conn=$db->getConnetction();
         $result = $stmt->execute();
 ?>
 <script>
-    window.open('../person.php', '_self');
+window.open('../person.php', '_self');
 </script>
 <?php        
     }
