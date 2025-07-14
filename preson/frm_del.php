@@ -5,7 +5,8 @@ $conn=$db->getConnetction();
 
 if(isset($_GET['id']) != ""){
     $id = $_GET['id'];
-    $stmt = $conn->prepare("SELECT * FROM prefix WHERE 	preid = '$id'");
+    $stmt = $conn->prepare("SELECT * FROM users, prefix WHERE users.pre_id=prefix.preid AND users.id =:id");
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
 
     $result = $stmt->fetch();
@@ -30,20 +31,20 @@ if(isset($_GET['id']) != ""){
     <section>
     <?php require_once('./navcopy.php'); ?>
         <article>
-                <h1 class="text-center">แก้ไขคำนำหน้า</h1>
+                <h1 class="text-center">ลบข้อมูลบุคลากร</h1>
                 <div>
                     <form action="./del.php" method="post">
                         <div class="row">
                             <div class="col-25">
-                                <label for="pretxt">คำนำหน้า</label>
+                                <label>ชื่อ-สกุล</label>
                             </div>
                         </div>
                         <div class="col-50">
-                            <input type="text" name="pretxt" value="<?php echo $result['pretxt']; ?>" readonly>
+                            <input type="text" name="pretxt" value="<?php echo $result['pretxt']." ".$result['fname']." ".$result['lname']; ?>" readonly>
                         </div>
                         <div class="row">
                         <div class="col-75">
-                            <input type="hidden" name="MM_id" value="<?php echo $result['preid']; ?>">
+                            <input type="hidden" name="MM_id" value="<?php echo $result['id']; ?>">
                             <input type="submit" value="บันทึก">
                         </div>
                         </div>
