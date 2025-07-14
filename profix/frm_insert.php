@@ -19,7 +19,7 @@
         <article>
                 <h1 class="text-center">เพิ่มคำนำหน้า</h1>
                 <div>
-                    <form action="./insert.php" method="post">
+                    <form action="../profix/insert.php" method="post">
                         <div class="col-25">
                             <label for="pretxt">คำนำหน้า</label>
                         </div>
