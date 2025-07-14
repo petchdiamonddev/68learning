@@ -5,7 +5,8 @@ $conn=$db->getConnetction();
 
 if(isset($_GET['id']) != ""){
     $id = $_GET['id'];
-    $stmt = $conn->prepare("SELECT * FROM prefix WHERE 	preid = '$id'");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
 
     $result = $stmt->fetch();
@@ -28,32 +29,60 @@ if(isset($_GET['id']) != ""){
     </header>
 
     <section>
-    <?php require_once('./navcopy.php'); ?>
+        <?php require_once('./navcopy.php'); ?>
         <article>
-                <h1 class="text-center">แก้ไขคำนำหน้า</h1>
-                <div>
-                    <form action="./edit.php" method="post">
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="pretxt">คำนำหน้า</label>
-                            </div>
+            <div>
+                <form action="../person/edit.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
+                    <div class="row">
+                        <div class="col-25">
+                            <label>คำนำหน้าชื่อ:</label>
                         </div>
                         <div class="col-50">
-                            <input type="text" name="pretxt" value="<?php echo $result['pretxt']; ?>">
+                           <select name="preid">
+                                <?php
+                                $stmt2 = $conn->prepare("SELECT * FROM prefix");
+                                $stmt2->execute();
+                                $res2 = $stmt2->fetchAll();
+                                foreach ($res2 as $row2) {
+                                ?>
+                                    <option value="<?php echo $row2['preid']; ?>" <?php if (!(strcmp($result['pre_id'], $row2['preid']))) { echo 'selected="selected"'; } ?>>
+                                        <?php echo $row2['pretxt']; ?>
+                                    </option>
+                                <?php
+                                }
+                                ?>
+                            </select>
                         </div>
-                        <div class="row">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label>ชื่อ:</label>
+                        </div>
+                        <div class="col-50">
+                            <input type="text" name="fname" value="<?php echo $result['fname']; ?>">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label>นามสกุล:</label>
+                        </div>
+                        <div class="col-50">
+                            <input type="text" name="lname" value="<?php echo $result['lname']; ?>">
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-75">
-                            <input type="hidden" name="MM_id" value="<?php echo $result['preid']; ?>">
-                            <input type="submit" value="บันทึก">
+                            <input type="submit" name="submit" value="บันทึก">
                         </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
+            </div>
         </article>
     </section>
-
-<?php require_once('../theme/footer.php');?>
-
 </body>
 
 </html>
