@@ -32,7 +32,7 @@ if(isset($_GET['id']) != ""){
         <?php require_once('./navcopy.php'); ?>
         <article>
             <div>
-                <form action="../person/edit.php" method="post">
+                <form action="./edit.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
                     <div class="row">
                         <div class="col-25">
