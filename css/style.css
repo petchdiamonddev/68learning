@@ -97,6 +97,13 @@ td {
 /* ทำเอง */
 
 
+input[type=file] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ffff;
+  resize: vertical;
+}
 input[type=text] {
   width: 100%;
   padding: 12px;
@@ -192,11 +199,11 @@ button a {
 }
 
 .btn2 {
-  background-color: red;
+  background-color: rgb(199, 177, 40);
 }
 
 .btn2:hover {
-  background-color: #0ABAB5;
+  background-color: #ba6e0a;
 }
 
 
@@ -211,6 +218,12 @@ button a {
 
 input[type=submit]:hover {
   background-color: rgb(176, 17, 17);
+}
+
+img {
+  border: 1px solid #fff5f5;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 
