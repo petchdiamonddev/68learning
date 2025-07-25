@@ -33,17 +33,27 @@ $result = $stmt->fetchAll();
             <table>
                 <thead>
                     <th>ลำดับ</th>
+                    <th>รูป</th>
                     <th>รายละเอียด</th>
                     <th>จัดการ</th>
                 </thead>
                 <tbody>
                     <?php
                     $i = 1;
-                    foreach ($result as $row) { ?>
+                    foreach ($result as $row) {
+                        
+                    $stmt2 = $conn->prepare("SELECT * FROM img WHERE user_id = '$row[id]'");
+                    $stmt2->execute();
+                    $res2 = $stmt2->fetch();                        
+                        
+                    ?>
+
                         <tr class="text-center">
                             <td><?php echo $i; ?></td>
+                            <td class="text-center"> <img src="<?=substr($res2['url_img'],1);?>" style="width: 80; height: 100px;"></td>
                             <td><?php echo $row['pretxt'] . "     " . $row['fname'] . " " . $row['lname']; ?></td>
                             <td class="text-cent">
+                                <button class="btn btn2"><a href="./preson/frm_img.php?id=<?php echo $row['id']; ?>">รูปไปรไฟล์</a></button>
                                 <button class="btn btn1"><a href="./preson/frm_edit.php?id=<?php echo $row['id']; ?>">แก้ไข</a></button>
                                 <button class="btn btn3"><a href="./preson/frm_del.php?id=<?php echo $row['id']; ?>">ลบ</a></button>
                             </td>
