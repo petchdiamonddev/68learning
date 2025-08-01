@@ -22,11 +22,20 @@ $conn=$db->getConnetction();
 if(isset($_POST['MM_id'])){
 
     $id = $_POST['MM_id']; 
+    $img = $_POST['MM_img']; 
+
+    @unlink($img);
 
     $stmt = $conn->prepare("DELETE FROM users WHERE id=:id"); 
     $stmt->bindParam(':id', $id); 
     $result = $stmt->execute();
-?>
+
+
+    $stmt2 = $conn->prepare("DELETE FROM img WHERE user_id=:id"); 
+    $stmt2->bindParam(':id', $id); 
+    $result2 = $stmt2->execute();
+    ?>
+    
 
 
 

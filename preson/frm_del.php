@@ -10,6 +10,13 @@ if(isset($_GET['id']) != ""){
     $stmt->execute();
 
     $result = $stmt->fetch();
+
+    $stmt2 = $conn->prepare("SELECT * FROM img WHERE user_id =:id");
+    $stmt2->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt2->execute();
+
+    $result2 = $stmt2->fetch();
+
 }
 
 ?>
@@ -45,6 +52,7 @@ if(isset($_GET['id']) != ""){
 
                     <div class="row">
                         <div class="col-75">
+                            <input type="hidden" name="MM_img" value="<?php echo $result2['url_img']; ?>">
                             <input type="hidden" name="MM_id" value="<?php echo $result['id']; ?>">
                             <input type="submit" name="submit" value="ยืนยันการลบ">
                         </div>
